@@ -1,5 +1,5 @@
 import java.lang.reflect.Field;
-public class Time {
+public class Time (int hour, int minute, int second){
     private int hour;
     private int minute;
     private int second;
