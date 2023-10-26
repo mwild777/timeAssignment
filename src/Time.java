@@ -35,16 +35,25 @@ public class Time {
         return (new Time(hour, minute, second));
     }
     public void print(boolean tf) {
-        if (tf == true) {
-            System.out.println(hour + ":" + minute + ":" + second);
-        }
-        else {
-            String amOrPm = " AM";
-            if (hour > 12) {
-                hour = hour - 12;
+        String amOrPm = " ";
+        if (!tf) {
+            amOrPm = " AM";
+            if (this.hour > 12) {
+                this.hour = this.hour - 12;
                 amOrPm = " PM";
             }
-            System.out.println(hour + ":" + minute + ":" + second + amOrPm);
         }
+        System.out.print(this.hour);
+        System.out.print(":");
+        if (this.minute < 10) {
+            System.out.print("0" + this.minute);
+        }
+        else {System.out.print(this.minute);}
+        System.out.print(":");
+        if (this.second < 10) {
+            System.out.print("0" + this.second);
+        }
+        else {System.out.print(this.second);}
+        System.out.println(amOrPm);
     }
 }
